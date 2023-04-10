@@ -56,7 +56,7 @@
             </div>
           </template>
           <template #item="{ element }">
-            <q-card flat bordered class="q-pa-sm q-mt-sm" style="cursor: move">
+            <q-card flat bordered class="" style="cursor: move">
               <q-card-section class="flex justify-between">
                 <div>{{ element.id }}</div>
                 <q-chip icon="person" :label="element.name" />
@@ -85,7 +85,7 @@ const drag = ref(false);
 const dragOptions = computed(() => {
   return {
     animation: 300,
-    group: "description",
+    group: "todos",
     disabled: false,
     ghostClass: "ghost",
   };
