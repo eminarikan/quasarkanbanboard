@@ -1,0 +1,101 @@
+{
+  "columns": [
+    {
+      "label": "New",
+      "position": 1,
+      "color": "primary",
+      "visible": true,
+      "list": [
+        {
+          "id": 1,
+          "name": "one",
+          "description": "this is a kanban item",
+          "priority": "LOW"
+        },
+        {
+          "id": 2,
+          "name": "two",
+          "description": "this is a kanban item",
+          "priority": "NORMAL"
+        },
+        {
+          "id": 3,
+          "name": "three",
+          "description": "this is a kanban item",
+          "priority": "LOWEST"
+        },
+        {
+          "id": 4,
+          "name": "four",
+          "description": "this is a kanban item",
+          "priority": "HIGH"
+        },
+        {
+          "id": 4,
+          "name": "four",
+          "description": "this is a kanban item",
+          "priority": "HIGH"
+        },
+        {
+          "id": 4,
+          "name": "four",
+          "description": "this is a kanban item",
+          "priority": "HIGH"
+        },
+        {
+          "id": 4,
+          "name": "four",
+          "description": "this is a kanban item",
+          "priority": "HIGH"
+        },
+        {
+          "id": 4,
+          "name": "four",
+          "description": "this is a kanban item",
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "label": "Blocked",
+      "position": 2,
+      "color": "secondary",
+      "visible": true,
+      "list": [
+        {
+          "id": 1,
+          "name": "one",
+          "description": "this is a kanban item",
+          "priority": "LOW"
+        },
+        {
+          "id": 2,
+          "name": "two",
+          "description": "this is a kanban item",
+          "priority": "NORMAL"
+        }
+      ]
+    },
+    {
+      "label": "In Progress",
+      "position": 3,
+      "color": "warning",
+      "visible": true,
+      "list": []
+    },
+    {
+      "label": "Waiting for Approval",
+      "position": 4,
+      "color": "positive",
+      "visible": true,
+      "list": []
+    },
+    {
+      "label": "Done",
+      "position": 5,
+      "color": "negative",
+      "visible": true,
+      "list": []
+    }
+  ]
+}
