@@ -2,6 +2,7 @@
   <q-card flat class="full-width">
     <q-card-actions align="left">
       <q-btn dense color="primary" icon="add" label="Yeni" />
+      <q-toggle v-model="darkMode" color="green" />
     </q-card-actions>
     <q-card-section class="row justify-start full-width">
       <div class="col q-ma-sm" v-for="(column, key) in columns" :key="key">
@@ -11,6 +12,7 @@
           group="todos"
           @start="drag = true"
           @end="drag = false"
+          item-key="id"
         >
           <template #header>
             <div>
@@ -56,10 +58,30 @@
             </div>
           </template>
           <template #item="{ element }">
-            <q-card flat bordered class="" style="cursor: move">
+            <q-card flat bordered class="q-ma-sm" style="cursor: move">
               <q-card-section class="flex justify-between">
                 <div>{{ element.id }}</div>
                 <q-chip icon="person" :label="element.name" />
+                <q-btn-dropdown flat dense dropdown-icon="more_vert">
+                  <q-list>
+                    <q-item dense clickable v-close-popup @click="onItemClick">
+                      <q-item-section avatar>
+                        <q-icon color="positive" name="edit" />
+                      </q-item-section>
+                      <q-item-section>
+                        <q-item-label>Güncelle</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                    <q-item dense clickable v-close-popup @click="onItemClick">
+                      <q-item-section avatar>
+                        <q-icon color="negative" name="delete" />
+                      </q-item-section>
+                      <q-item-section>
+                        <q-item-label>Sil</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-btn-dropdown>
               </q-card-section>
               <q-card-section class="flex justify-between">
                 <div>{{ element.description }}</div>
@@ -74,7 +96,11 @@
 
 <script setup>
 import draggable from "vuedraggable";
-import { ref, defineProps, computed } from "vue";
+import { ref, defineProps, computed, watch } from "vue";
+import { useQuasar } from "quasar";
+
+const q = useQuasar();
+const darkMode = ref(false);
 
 const props = defineProps({
   columns: Array,
@@ -89,6 +115,12 @@ const dragOptions = computed(() => {
     disabled: false,
     ghostClass: "ghost",
   };
+});
+
+function onClick() {}
+
+watch(darkMode, () => {
+  q.dark.set(darkMode.value);
 });
 </script>
 

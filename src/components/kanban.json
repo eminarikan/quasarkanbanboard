@@ -9,7 +9,7 @@
         {
           "id": 1,
           "name": "one",
-          "description": "this is a kanban item",
+          "description": "this is a kanban item this is a kanban item this is a kanban item this is a kanban item",
           "priority": "LOW"
         },
         {
