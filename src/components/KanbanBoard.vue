@@ -2,7 +2,7 @@
   <q-card flat class="full-width">
     <q-card-actions align="left">
       <q-btn dense color="primary" icon="add" label="Yeni" />
-      <q-toggle v-model="darkMode" color="green" />
+      <q-toggle v-model="darkMode" color="green" label="Dark" />
     </q-card-actions>
     <q-card-section class="row justify-start full-width">
       <div class="col q-ma-sm" v-for="(column, key) in columns" :key="key">
@@ -26,7 +26,7 @@
                   <q-list>
                     <q-item dense clickable v-close-popup @click="onItemClick">
                       <q-item-section avatar>
-                        <q-icon name="edit" />
+                        <q-icon color="warning" name="edit" />
                       </q-item-section>
                       <q-item-section>
                         <q-item-label>Etiketi Değiştir</q-item-label>
@@ -34,7 +34,7 @@
                     </q-item>
                     <q-item dense clickable v-close-popup @click="onItemClick">
                       <q-item-section avatar>
-                        <q-icon name="add" />
+                        <q-icon color="positive" name="add" />
                       </q-item-section>
                       <q-item-section>
                         <q-item-label>Sütun Ekle/Çıkar</q-item-label>
@@ -66,7 +66,7 @@
                   <q-list>
                     <q-item dense clickable v-close-popup @click="onItemClick">
                       <q-item-section avatar>
-                        <q-icon color="positive" name="edit" />
+                        <q-icon color="warning" name="edit" />
                       </q-item-section>
                       <q-item-section>
                         <q-item-label>Güncelle</q-item-label>
