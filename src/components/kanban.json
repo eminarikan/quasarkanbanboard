@@ -1,7 +1,7 @@
 {
   "columns": [
     {
-      "label": "New",
+      "label": "Yeni",
       "position": 1,
       "color": "primary",
       "visible": true,
@@ -9,55 +9,55 @@
         {
           "id": 1,
           "name": "one",
-          "description": "this is a kanban item this is a kanban item this is a kanban item this is a kanban item",
+          "description": "item açıklaması",
           "priority": "LOW"
         },
         {
           "id": 2,
           "name": "two",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "NORMAL"
         },
         {
           "id": 3,
           "name": "three",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "LOWEST"
         },
         {
           "id": 4,
           "name": "four",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "HIGH"
         },
         {
           "id": 5,
           "name": "five",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "HIGH"
         },
         {
           "id": 6,
           "name": "six",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "HIGH"
         },
         {
           "id": 7,
           "name": "seven",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "HIGH"
         },
         {
           "id": 8,
           "name": "eight",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "HIGH"
         }
       ]
     },
     {
-      "label": "Blocked",
+      "label": "Kapalı",
       "position": 2,
       "color": "secondary",
       "visible": true,
@@ -65,33 +65,33 @@
         {
           "id": 9,
           "name": "nine",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "LOW"
         },
         {
           "id": 10,
           "name": "ten",
-          "description": "this is a kanban item",
+          "description": "item açıklaması",
           "priority": "NORMAL"
         }
       ]
     },
     {
-      "label": "In Progress",
+      "label": "Devam Eden",
       "position": 3,
       "color": "warning",
       "visible": true,
       "list": []
     },
     {
-      "label": "Waiting for Approval",
+      "label": "Onay Bekleyen",
       "position": 4,
       "color": "positive",
       "visible": true,
       "list": []
     },
     {
-      "label": "Done",
+      "label": "Bitmiş",
       "position": 5,
       "color": "negative",
       "visible": true,
