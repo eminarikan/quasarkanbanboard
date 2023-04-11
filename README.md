@@ -1,4 +1,4 @@
-# quasarkanbanboard
+# vue-quasar-kanban-board
 
 Kanban Board Component
 
