@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="flex">
+  <q-page padding class="flex flex-center">
     <KanbanBoard :columns="data.columns"></KanbanBoard>
   </q-page>
 </template>
