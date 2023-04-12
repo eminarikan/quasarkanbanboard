@@ -98,6 +98,16 @@
                 <q-card-section class="flex justify-between">
                   <div>{{ element.description }}</div>
                 </q-card-section>
+                <q-card-section class="flex justify-between">
+                  <q-select
+                    dense
+                    outlined
+                    rounded
+                    :bg-color="element.priority.color"
+                    v-model="element.priority"
+                    :options="priorities"
+                  ></q-select>
+                </q-card-section>
               </q-card>
             </div>
           </template>
@@ -111,6 +121,7 @@
 import draggable from "vuedraggable";
 import { ref, defineProps, computed, watch } from "vue";
 import { useQuasar } from "quasar";
+import priorities from "./priorities.json";
 
 const q = useQuasar();
 const darkMode = ref(false);

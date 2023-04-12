@@ -10,49 +10,57 @@
           "id": 1,
           "name": "one",
           "description": "item açıklaması",
-          "priority": "LOW"
+          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "red" }
         },
         {
           "id": 2,
           "name": "two",
           "description": "item açıklaması",
-          "priority": "NORMAL"
+          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
         },
         {
           "id": 3,
           "name": "three",
           "description": "item açıklaması",
-          "priority": "LOWEST"
+          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
         },
         {
           "id": 4,
           "name": "four",
           "description": "item açıklaması",
-          "priority": "HIGH"
+          "priority": { "label": "LOW", "value": "LOW", "color": "green" }
         },
         {
           "id": 5,
           "name": "five",
           "description": "item açıklaması",
-          "priority": "HIGH"
+          "priority": {
+            "label": "MEDIUM",
+            "value": "MEDIUM",
+            "color": "yellow"
+          }
         },
         {
           "id": 6,
           "name": "six",
           "description": "item açıklaması",
-          "priority": "HIGH"
+          "priority": { "label": "HIGH", "value": "HIGH", "color": "pink" }
         },
         {
           "id": 7,
           "name": "seven",
           "description": "item açıklaması",
-          "priority": "HIGH"
+          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
         },
         {
           "id": 8,
           "name": "eight",
           "description": "item açıklaması",
-          "priority": "HIGH"
+          "priority": {
+            "label": "CRITICAL",
+            "value": "CRITICAL",
+            "color": "red"
+          }
         }
       ]
     },
@@ -66,13 +74,21 @@
           "id": 9,
           "name": "nine",
           "description": "item açıklaması",
-          "priority": "LOW"
+          "priority": {
+            "label": "CRITICAL",
+            "value": "CRITICAL",
+            "color": "red"
+          }
         },
         {
           "id": 10,
           "name": "ten",
           "description": "item açıklaması",
-          "priority": "NORMAL"
+          "priority": {
+            "label": "CRITICAL",
+            "value": "CRITICAL",
+            "color": "red"
+          }
         }
       ]
     },
