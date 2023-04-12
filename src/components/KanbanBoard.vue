@@ -7,6 +7,7 @@
     <q-card-section class="row justify-start full-width">
       <div class="col q-ma-sm" v-for="(column, key) in columns" :key="key">
         <draggable
+          :class="q.dark.isActive ? darkModeStyle : lightModeStyle"
           v-model="column.list"
           v-bind="dragOptions"
           group="todos"
@@ -58,35 +59,47 @@
             </div>
           </template>
           <template #item="{ element }">
-            <q-card flat bordered class="q-ma-sm" style="cursor: move">
-              <q-card-section class="flex justify-between">
-                <div>{{ element.id }}</div>
-                <q-chip icon="person" :label="element.name" />
-                <q-btn-dropdown flat dense dropdown-icon="more_vert">
-                  <q-list>
-                    <q-item dense clickable v-close-popup @click="onItemClick">
-                      <q-item-section avatar>
-                        <q-icon color="warning" name="edit" />
-                      </q-item-section>
-                      <q-item-section>
-                        <q-item-label>Güncelle</q-item-label>
-                      </q-item-section>
-                    </q-item>
-                    <q-item dense clickable v-close-popup @click="onItemClick">
-                      <q-item-section avatar>
-                        <q-icon color="negative" name="delete" />
-                      </q-item-section>
-                      <q-item-section>
-                        <q-item-label>Sil</q-item-label>
-                      </q-item-section>
-                    </q-item>
-                  </q-list>
-                </q-btn-dropdown>
-              </q-card-section>
-              <q-card-section class="flex justify-between">
-                <div>{{ element.description }}</div>
-              </q-card-section>
-            </q-card>
+            <div class="q-pa-sm">
+              <q-card flat bordered class="" style="cursor: move">
+                <q-card-section class="flex justify-between">
+                  <div>{{ element.id }}</div>
+                  <q-chip icon="person" :label="element.name" />
+                  <q-btn-dropdown flat dense dropdown-icon="more_vert">
+                    <q-list>
+                      <q-item
+                        dense
+                        clickable
+                        v-close-popup
+                        @click="onItemClick"
+                      >
+                        <q-item-section avatar>
+                          <q-icon color="warning" name="edit" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label>Güncelle</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                      <q-item
+                        dense
+                        clickable
+                        v-close-popup
+                        @click="onItemClick"
+                      >
+                        <q-item-section avatar>
+                          <q-icon color="negative" name="delete" />
+                        </q-item-section>
+                        <q-item-section>
+                          <q-item-label>Sil</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-btn-dropdown>
+                </q-card-section>
+                <q-card-section class="flex justify-between">
+                  <div>{{ element.description }}</div>
+                </q-card-section>
+              </q-card>
+            </div>
           </template>
         </draggable>
       </div>
@@ -116,6 +129,9 @@ const dragOptions = computed(() => {
     ghostClass: "ghost",
   };
 });
+
+const lightModeStyle = "bg-blue-grey-2 rounded-borders";
+const darkModeStyle = "bg-blue-grey-8 rounded-borders";
 
 function onClick() {}
 
