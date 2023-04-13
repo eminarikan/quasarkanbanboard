@@ -29,7 +29,8 @@
             "value": "LOWEST",
             "color": "blue"
           },
-          "tags": ["one", "two", "three"]
+          "tags": ["one", "two", "three"],
+          "assigned": "EA"
         },
         {
           "id": 1,
@@ -40,6 +41,7 @@
             "value": "LOWEST",
             "color": "blue"
           },
+          "tags": ["one", "two", "three"],
           "assigned": "FY"
         }
       ]

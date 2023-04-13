@@ -134,15 +134,14 @@
                     />
                   </template>
                 </q-select>
-                <q-btn v-if="element.assigned" round color="white">
-                  <q-avatar
-                    size="40px"
-                    font-size=".75rem"
-                    color="teal"
-                    text-color="white"
-                    >{{ element.assigned }}</q-avatar
-                  >
-                </q-btn>
+                <q-avatar
+                  v-if="element.assigned"
+                  size="1.3rem"
+                  font-size=".75rem"
+                  color="teal"
+                  text-color="white"
+                  >{{ element.assigned }}</q-avatar
+                >
               </q-card-section>
               <q-separator v-if="element.tags" />
               <q-card-section v-if="element.tags" class="q-pa-sm">
