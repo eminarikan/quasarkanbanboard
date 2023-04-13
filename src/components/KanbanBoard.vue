@@ -4,7 +4,7 @@
       <q-btn dense color="primary" icon="add" label="Yeni" />
       <q-toggle v-model="darkMode" color="green" label="Dark" />
     </q-card-actions>
-    <q-card-section class="row justify-start full-width">
+    <q-card-section class="q-pa-none row justify-start full-width">
       <div class="col q-ma-sm" v-for="(column, key) in columns" :key="key">
         <draggable
           :class="q.dark.isActive ? darkModeStyle : lightModeStyle"
@@ -18,12 +18,12 @@
           <template #header>
             <div>
               <q-bar
-                :class="`text-overline row justify-between rounded-borders`"
+                :class="`row justify-between rounded-borders`"
                 :style="`border-bottom: 3px solid ${column.color}; border-bottom-left-radius: 0; border-bottom-right-radius: 0;`"
               >
-                <q-item-label class="text-caption">
+                <span class="text-subtitle2">
                   {{ column.list.length + " " + column.label }}
-                </q-item-label>
+                </span>
                 <q-btn-dropdown flat round dense dropdown-icon="more_vert">
                   <q-list>
                     <q-item dense clickable v-close-popup @click="onItemClick">
@@ -61,23 +61,31 @@
           </template>
           <template #item="{ element }">
             <q-card
+              bordered
               class="q-ma-sm"
               :style="`cursor: move; border-left: 3px solid ${element.priority.color}`"
             >
-              <q-card-section class="q-pa-xs flex justify-between">
-                <div>
-                  <q-item-label class="text-caption text-bold q-ma-xs">{{
+              <q-card-section class="q-pa-sm flex justify-between">
+                <div class="">
+                  <q-item-label class="text-caption text-bold">{{
                     "İş #" + element.id
                   }}</q-item-label>
                   <q-btn
                     flat
+                    push
                     no-caps
                     align="left"
                     :label="element.name"
-                    class="btn-fixed-width"
+                    class="q-pa-none"
                   />
                 </div>
-                <q-btn-dropdown flat dense rounded dropdown-icon="more_vert">
+                <q-btn-dropdown
+                  flat
+                  dense
+                  size="md"
+                  rounded
+                  dropdown-icon="more_vert"
+                >
                   <q-list>
                     <q-item dense clickable v-close-popup @click="onItemClick">
                       <q-item-section avatar>
@@ -98,16 +106,12 @@
                   </q-list>
                 </q-btn-dropdown>
               </q-card-section>
-              <q-card-section class="q-pa-none">
-                <q-scroll-area
-                  class="q-pa-xs"
-                  style="width: auto; height: 5rem"
-                >
+              <q-card-section class="q-pa-sm">
+                <q-scroll-area class="" style="width: auto; height: 5rem">
                   <div>{{ element.description }}</div>
                 </q-scroll-area>
               </q-card-section>
-              <q-separator inset />
-              <q-card-section class="q-pa-xs flex justify-end">
+              <q-card-section class="q-pa-sm flex justify-between items-center">
                 <q-select
                   dense
                   options-dense
@@ -128,6 +132,28 @@
                     />
                   </template>
                 </q-select>
+                <q-avatar
+                  v-if="element.assigned"
+                  class="shadow-1"
+                  size="1.3rem"
+                  font-size=".75rem"
+                  color="teal"
+                  text-color="white"
+                  >{{ element.assigned }}</q-avatar
+                >
+              </q-card-section>
+              <q-separator v-if="element.tags" />
+              <q-card-section v-if="element.tags" class="q-pa-sm">
+                <q-chip
+                  dense
+                  size=".7rem"
+                  icon="tag"
+                  color="primary"
+                  text-color="white"
+                  v-for="(tag, i) in element.tags"
+                  :key="i"
+                  :label="tag"
+                />
               </q-card-section>
             </q-card>
           </template>
@@ -161,8 +187,10 @@ const dragOptions = computed(() => {
   };
 });
 
-const lightModeStyle = "bg-blue-grey-1 rounded-borders";
-const darkModeStyle = "bg-blue-grey-8 rounded-borders";
+//const lightModeStyle = "bg-blue-grey-1 rounded-borders";
+//const darkModeStyle = "bg-blue-grey-8 rounded-borders";
+const lightModeStyle = "rounded-borders";
+const darkModeStyle = "rounded-borders";
 
 function onClick() {}
 
@@ -177,6 +205,6 @@ watch(darkMode, () => {
 }
 .ghost {
   opacity: 0.2;
-  background: #701a75;
+  background: #6f3a72;
 }
 </style>

@@ -1,7 +1,7 @@
 [
   { "label": "LOWEST", "value": "LOWEST", "color": "red" },
   { "label": "LOW", "value": "LOW", "color": "green" },
-  { "label": "MEDIUM", "value": "MEDIUM", "color": "yellow" },
+  { "label": "MEDIUM", "value": "MEDIUM", "color": "orange" },
   { "label": "HIGH", "value": "HIGH", "color": "pink" },
   { "label": "CRITICAL", "value": "CRITICAL", "color": "red" }
 ]
