@@ -1,5 +1,5 @@
 <template>
-  <q-card flat class="full-width">
+  <q-card flat bordered class="q-mt-xl" style="width: 95vw">
     <q-card-actions align="left">
       <q-btn dense color="primary" icon="add" label="Yeni" />
       <q-toggle v-model="darkMode" color="green" label="Dark" />
@@ -21,7 +21,7 @@
                 :class="`row justify-between rounded-borders`"
                 :style="`border-bottom: 3px solid ${column.color}; border-bottom-left-radius: 0; border-bottom-right-radius: 0;`"
               >
-                <span class="text-subtitle2">
+                <span class="text-overline">
                   {{ column.list.length + " " + column.label }}
                 </span>
                 <q-btn-dropdown flat round dense dropdown-icon="more_vert">
@@ -125,7 +125,7 @@
                   <template #selected>
                     <q-chip
                       dense
-                      class="text-white text-caption"
+                      class="text-white text-caption q-pa-sm"
                       :color="element.priority.color"
                       icon-right="arrow_drop_down"
                       :label="element.priority.label"
@@ -146,6 +146,7 @@
               <q-card-section v-if="element.tags" class="q-pa-sm">
                 <q-chip
                   dense
+                  class="q-pa-sm"
                   size=".7rem"
                   icon="tag"
                   color="primary"
