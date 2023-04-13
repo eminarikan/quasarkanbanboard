@@ -3,113 +3,56 @@
     {
       "label": "Yeni",
       "position": 1,
-      "color": "primary",
-      "visible": true,
-      "list": [
-        {
-          "id": 1,
-          "name": "one",
-          "description": "item açıklaması",
-          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "red" }
-        },
-        {
-          "id": 2,
-          "name": "two",
-          "description": "item açıklaması",
-          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
-        },
-        {
-          "id": 3,
-          "name": "three",
-          "description": "item açıklaması",
-          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
-        },
-        {
-          "id": 4,
-          "name": "four",
-          "description": "item açıklaması",
-          "priority": { "label": "LOW", "value": "LOW", "color": "green" }
-        },
-        {
-          "id": 5,
-          "name": "five",
-          "description": "item açıklaması",
-          "priority": {
-            "label": "MEDIUM",
-            "value": "MEDIUM",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": 6,
-          "name": "six",
-          "description": "item açıklaması",
-          "priority": { "label": "HIGH", "value": "HIGH", "color": "pink" }
-        },
-        {
-          "id": 7,
-          "name": "seven",
-          "description": "item açıklaması",
-          "priority": { "label": "LOWEST", "value": "LOWEST", "color": "gray" }
-        },
-        {
-          "id": 8,
-          "name": "eight",
-          "description": "item açıklaması",
-          "priority": {
-            "label": "CRITICAL",
-            "value": "CRITICAL",
-            "color": "red"
-          }
-        }
-      ]
-    },
-    {
-      "label": "Kapalı",
-      "position": 2,
-      "color": "secondary",
-      "visible": true,
-      "list": [
-        {
-          "id": 9,
-          "name": "nine",
-          "description": "item açıklaması",
-          "priority": {
-            "label": "CRITICAL",
-            "value": "CRITICAL",
-            "color": "red"
-          }
-        },
-        {
-          "id": 10,
-          "name": "ten",
-          "description": "item açıklaması",
-          "priority": {
-            "label": "CRITICAL",
-            "value": "CRITICAL",
-            "color": "red"
-          }
-        }
-      ]
-    },
-    {
-      "label": "Devam Eden",
-      "position": 3,
-      "color": "warning",
+      "color": "blue",
       "visible": true,
       "list": []
     },
     {
+      "label": "Kapalı",
+      "position": 2,
+      "color": "aqua",
+      "visible": true,
+      "list": []
+    },
+    {
+      "label": "Devam Eden",
+      "position": 3,
+      "color": "orange",
+      "visible": true,
+      "list": [
+        {
+          "id": 1,
+          "name": "This is an Item Header ",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores iusto voluptatum totam! Cum nihil recusandae corporis blanditiis dolor tempore alias, maxime, ipsa qui, nam eum necessitatibus mollitia. Aspernatur, nesciunt consectetur.",
+          "priority": {
+            "label": "LOWEST",
+            "value": "LOWEST",
+            "color": "blue"
+          }
+        },
+        {
+          "id": 1,
+          "name": "This is an Item Header ",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores iusto voluptatum totam! Cum nihil recusandae corporis blanditiis dolor tempore alias, maxime, ipsa qui, nam eum necessitatibus mollitia. Aspernatur, nesciunt consectetur.",
+          "priority": {
+            "label": "LOWEST",
+            "value": "LOWEST",
+            "color": "blue"
+          }
+        }
+      ]
+    },
+    {
       "label": "Onay Bekleyen",
       "position": 4,
-      "color": "positive",
+      "color": "green",
       "visible": true,
       "list": []
     },
     {
       "label": "Bitmiş",
       "position": 5,
-      "color": "negative",
+      "color": "red",
       "visible": true,
       "list": []
     }

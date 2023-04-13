@@ -18,7 +18,8 @@
           <template #header>
             <div>
               <q-bar
-                :class="`bg-${column.color} text-white row justify-between rounded-borders`"
+                :class="`text-overline row justify-between rounded-borders`"
+                :style="`border-bottom: 3px solid ${column.color}; border-bottom-left-radius: 0; border-bottom-right-radius: 0;`"
               >
                 <q-item-label class="text-caption">
                   {{ column.list.length + " " + column.label }}
@@ -59,57 +60,76 @@
             </div>
           </template>
           <template #item="{ element }">
-            <div class="q-pa-sm">
-              <q-card flat bordered class="" style="cursor: move">
-                <q-card-section class="flex justify-between">
-                  <div>{{ element.id }}</div>
-                  <q-chip icon="person" :label="element.name" />
-                  <q-btn-dropdown flat dense dropdown-icon="more_vert">
-                    <q-list>
-                      <q-item
-                        dense
-                        clickable
-                        v-close-popup
-                        @click="onItemClick"
-                      >
-                        <q-item-section avatar>
-                          <q-icon color="warning" name="edit" />
-                        </q-item-section>
-                        <q-item-section>
-                          <q-item-label>Güncelle</q-item-label>
-                        </q-item-section>
-                      </q-item>
-                      <q-item
-                        dense
-                        clickable
-                        v-close-popup
-                        @click="onItemClick"
-                      >
-                        <q-item-section avatar>
-                          <q-icon color="negative" name="delete" />
-                        </q-item-section>
-                        <q-item-section>
-                          <q-item-label>Sil</q-item-label>
-                        </q-item-section>
-                      </q-item>
-                    </q-list>
-                  </q-btn-dropdown>
-                </q-card-section>
-                <q-card-section class="flex justify-between">
+            <q-card
+              class="q-ma-sm"
+              :style="`cursor: move; border-left: 3px solid ${element.priority.color}`"
+            >
+              <q-card-section class="q-pa-xs flex justify-between">
+                <div>
+                  <q-item-label class="text-caption text-bold q-ma-xs">{{
+                    "İş #" + element.id
+                  }}</q-item-label>
+                  <q-btn
+                    flat
+                    no-caps
+                    align="left"
+                    :label="element.name"
+                    class="btn-fixed-width"
+                  />
+                </div>
+                <q-btn-dropdown flat dense rounded dropdown-icon="more_vert">
+                  <q-list>
+                    <q-item dense clickable v-close-popup @click="onItemClick">
+                      <q-item-section avatar>
+                        <q-icon color="warning" name="edit" />
+                      </q-item-section>
+                      <q-item-section>
+                        <q-item-label>Güncelle</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                    <q-item dense clickable v-close-popup @click="onItemClick">
+                      <q-item-section avatar>
+                        <q-icon color="negative" name="delete" />
+                      </q-item-section>
+                      <q-item-section>
+                        <q-item-label>Sil</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-btn-dropdown>
+              </q-card-section>
+              <q-card-section class="q-pa-none">
+                <q-scroll-area
+                  class="q-pa-xs"
+                  style="width: auto; height: 5rem"
+                >
                   <div>{{ element.description }}</div>
-                </q-card-section>
-                <q-card-section class="flex justify-between">
-                  <q-select
-                    dense
-                    outlined
-                    rounded
-                    :bg-color="element.priority.color"
-                    v-model="element.priority"
-                    :options="priorities"
-                  ></q-select>
-                </q-card-section>
-              </q-card>
-            </div>
+                </q-scroll-area>
+              </q-card-section>
+              <q-separator inset />
+              <q-card-section class="q-pa-xs flex justify-end">
+                <q-select
+                  dense
+                  options-dense
+                  borderless
+                  rounded
+                  use-chips
+                  hide-dropdown-icon
+                  v-model="element.priority"
+                  :options="priorities"
+                >
+                  <template #selected>
+                    <q-chip
+                      dense
+                      class="text-white text-caption"
+                      :color="element.priority.color"
+                      icon-right="arrow_drop_down"
+                      :label="element.priority.label"
+                    />
+                  </template>
+                </q-select>
+              </q-card-section>
+            </q-card>
           </template>
         </draggable>
       </div>
@@ -141,7 +161,7 @@ const dragOptions = computed(() => {
   };
 });
 
-const lightModeStyle = "bg-blue-grey-2 rounded-borders";
+const lightModeStyle = "bg-blue-grey-1 rounded-borders";
 const darkModeStyle = "bg-blue-grey-8 rounded-borders";
 
 function onClick() {}
@@ -155,9 +175,8 @@ watch(darkMode, () => {
 .b {
   border: 1px solid black;
 }
-
 .ghost {
-  opacity: 0.3;
-  background: #f2c037;
+  opacity: 0.2;
+  background: #701a75;
 }
 </style>
