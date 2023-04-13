@@ -1,11 +1,14 @@
 <template>
-  <q-card flat bordered class="q-mt-xl" style="width: 96vw">
+  <q-card flat class="q-mt-xl" style="width: 96vw">
     <q-card-actions align="left">
-      <q-btn dense color="primary" icon="add" label="Yeni" />
+      <q-btn dense unelevated color="primary" icon="add" label="Yeni" />
       <q-toggle v-model="darkMode" color="green" label="Dark" />
     </q-card-actions>
-    <q-card-section class="q-pa-none row justify-start full-width">
-      <div class="col q-ma-sm" v-for="(column, key) in columns" :key="key">
+    <q-card-section
+      class="q-pa-none row justify-center"
+      style="min-width: 100%"
+    >
+      <div class="col-2 q-ma-sm" v-for="(column, key) in columns" :key="key">
         <draggable
           :class="q.dark.isActive ? darkModeStyle : lightModeStyle"
           v-model="column.list"
@@ -61,7 +64,6 @@
           </template>
           <template #item="{ element }">
             <q-card
-              bordered
               class="q-ma-sm"
               :style="`cursor: move; border-left: 3px solid ${element.priority.color}`"
             >
@@ -132,15 +134,15 @@
                     />
                   </template>
                 </q-select>
-                <q-avatar
-                  v-if="element.assigned"
-                  class="shadow-1"
-                  size="1.3rem"
-                  font-size=".75rem"
-                  color="teal"
-                  text-color="white"
-                  >{{ element.assigned }}</q-avatar
-                >
+                <q-btn v-if="element.assigned" round color="white">
+                  <q-avatar
+                    size="40px"
+                    font-size=".75rem"
+                    color="teal"
+                    text-color="white"
+                    >{{ element.assigned }}</q-avatar
+                  >
+                </q-btn>
               </q-card-section>
               <q-separator v-if="element.tags" />
               <q-card-section v-if="element.tags" class="q-pa-sm">
