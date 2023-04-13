@@ -9,7 +9,7 @@
 import KanbanBoard from "src/components/KanbanBoard.vue";
 import kanban from "src/components/kanban.json";
 import { ref } from "vue";
-// #81b1a8
+
 const data = ref(kanban);
 </script>
 <style scoped>

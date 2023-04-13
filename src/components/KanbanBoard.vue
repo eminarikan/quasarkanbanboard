@@ -1,5 +1,5 @@
 <template>
-  <q-card flat bordered class="q-mt-xl" style="width: 95vw">
+  <q-card flat bordered class="q-mt-xl" style="width: 96vw">
     <q-card-actions align="left">
       <q-btn dense color="primary" icon="add" label="Yeni" />
       <q-toggle v-model="darkMode" color="green" label="Dark" />
