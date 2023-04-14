@@ -12,7 +12,20 @@
       "position": 2,
       "color": "DarkMagenta",
       "visible": true,
-      "list": []
+      "list": [
+        {
+          "id": 1,
+          "name": "This is an Item Header ",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores iusto voluptatum totam! Cum nihil recusandae corporis blanditiis dolor tempore alias, maxime, ipsa qui, nam eum necessitatibus mollitia. Aspernatur, nesciunt consectetur.",
+          "priority": {
+            "label": "MEDIUM",
+            "value": "MEDIUM",
+            "color": "orange"
+          },
+          "tags": ["one", "two"],
+          "assigned": "FY"
+        }
+      ]
     },
     {
       "label": "Devam Eden",
@@ -31,18 +44,6 @@
           },
           "tags": ["one", "two", "three"],
           "assigned": "EA"
-        },
-        {
-          "id": 1,
-          "name": "This is an Item Header ",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores iusto voluptatum totam! Cum nihil recusandae corporis blanditiis dolor tempore alias, maxime, ipsa qui, nam eum necessitatibus mollitia. Aspernatur, nesciunt consectetur.",
-          "priority": {
-            "label": "LOWEST",
-            "value": "LOWEST",
-            "color": "blue"
-          },
-          "tags": ["one", "two", "three"],
-          "assigned": "FY"
         }
       ]
     },
